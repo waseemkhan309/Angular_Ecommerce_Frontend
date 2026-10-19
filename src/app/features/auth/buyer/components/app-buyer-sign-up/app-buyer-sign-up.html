@@ -1,0 +1,265 @@
+
+<form
+  [formGroup]="BuyerSignUpForm"
+  (ngSubmit)="onSubmit()"
+>
+  <!-- Seller Details -->
+  <section >
+   
+
+    <div class="form-field">
+      <label for="signup-username" class="form-label">Username</label>
+      <input
+        id="signup-username"
+        type="text"
+        formControlName="userName"
+        placeholder="Enter username"
+        autocomplete="username"
+        class="form-input"
+      />
+      @if (BuyerSignUpForm.controls.userName.touched &&
+           BuyerSignUpForm.controls.userName.invalid) {
+        <small class="form-error">Username is required.</small>
+      }
+    </div>
+
+    <div>
+      <div class="form-field">
+        <label for="signup-firstname" class="form-label">First Name</label>
+        <input
+          id="signup-firstname"
+          type="text"
+          formControlName="firstName"
+          placeholder="First name"
+          autocomplete="given-name"
+          class="form-input"
+        />
+        @if (BuyerSignUpForm.controls.firstName.touched &&
+             BuyerSignUpForm.controls.firstName.invalid) {
+          <small class="form-error">First name is required.</small>
+        }
+      </div>
+
+      <div class="form-field">
+        <label for="signup-lastname" class="form-label">Last Name</label>
+        <input
+          id="signup-lastname"
+          type="text"
+          formControlName="lastName"
+          placeholder="Last name"
+          autocomplete="family-name"
+          class="form-input"
+        />
+        @if (BuyerSignUpForm.controls.lastName.touched &&
+             BuyerSignUpForm.controls.lastName.invalid) {
+          <small class="form-error">Last name is required.</small>
+        }
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="signup-email" class="form-label">Email</label>
+      <input
+        id="signup-email"
+        type="email"
+        formControlName="email"
+        placeholder="Enter your email"
+        autocomplete="email"
+        class="form-input"
+      />
+      @if (BuyerSignUpForm.controls.email.touched &&
+           BuyerSignUpForm.controls.email.hasError('required')) {
+        <small class="form-error">Email is required.</small>
+      }
+      @if (BuyerSignUpForm.controls.email.touched &&
+           BuyerSignUpForm.controls.email.hasError('email')) {
+        <small class="form-error">Enter a valid email address.</small>
+      }
+    </div>
+
+    <div class="form-field">
+      <label for="signup-phone" class="form-label">Phone Number</label>
+      <input
+        id="signup-phone"
+        type="tel"
+        formControlName="phoneNumber"
+        placeholder="Enter phone number"
+        autocomplete="tel"
+        class="form-input"
+      />
+      @if (BuyerSignUpForm.controls.phoneNumber.touched &&
+           BuyerSignUpForm.controls.phoneNumber.invalid) {
+        <small class="form-error">Phone number is required.</small>
+      }
+    </div>
+
+    <div class="form-field">
+      <label for="signup-password" class="form-label">Password</label>
+      <input
+        id="signup-password"
+        type="password"
+        formControlName="password"
+        placeholder="Minimum 8 characters"
+        autocomplete="new-password"
+        class="form-input"
+      />
+      @if (BuyerSignUpForm.controls.password.touched &&
+           BuyerSignUpForm.controls.password.invalid) {
+        <small class="form-error">
+          Password must contain at least 8 characters.
+        </small>
+      }
+    </div>
+
+    <div class="form-field">
+      <label for="signup-gender" class="form-label">Gender</label>
+
+      <select
+        id="signup-gender"
+        formControlName="gender"
+        class="form-field input"
+        style="padding: 10px; border-radius: 5px; border-color: gray;"
+      >
+        <option value="" disabled>Select gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+      @if (BuyerSignUpForm.controls.gender.touched &&
+           BuyerSignUpForm.controls.gender.invalid) {
+        <small class="form-error">Please select a gender.</small>
+      }
+    </div>
+
+  <!-- Address Details -->
+ 
+
+    <div class="form-field">
+      <label for="signup-street" class="form-label">Street</label>
+      <input
+        id="signup-street"
+        type="text"
+        formControlName="street"
+        placeholder="Street address"
+        autocomplete="address-line1"
+        class="form-input"
+      />
+      @if (BuyerSignUpForm.controls.street.touched &&
+           BuyerSignUpForm.controls.street.invalid) {
+        <small class="form-error">Street is required.</small>
+      }
+    </div>
+
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div class="form-field">
+        <label for="signup-city" class="form-label">City</label>
+        <input
+          id="signup-city"
+          type="text"
+          formControlName="city"
+          placeholder="City"
+          autocomplete="address-level2"
+          class="form-input"
+        />
+        @if (BuyerSignUpForm.controls.city.touched &&
+             BuyerSignUpForm.controls.city.invalid) {
+          <small class="form-error">City is required.</small>
+        }
+      </div>
+
+      <div class="form-field">
+        <label for="signup-state" class="form-label">State / Province</label>
+        <input
+          id="signup-state"
+          type="text"
+          formControlName="state"
+          placeholder="State or province"
+          autocomplete="address-level1"
+          class="form-input"
+        />
+        @if (BuyerSignUpForm.controls.state.touched &&
+             BuyerSignUpForm.controls.state.invalid) {
+          <small class="form-error">State is required.</small>
+        }
+      </div>
+
+      <div class="form-field">
+        <label for="signup-area" class="form-label">Area</label>
+        <input
+          id="signup-area"
+          type="text"
+          formControlName="area"
+          placeholder="Area or neighborhood"
+          class="form-input"
+        />
+        @if (BuyerSignUpForm.controls.area.touched &&
+             BuyerSignUpForm.controls.area.invalid) {
+          <small class="form-error">Area is required.</small>
+        }
+      </div>
+
+      <div class="form-field">
+        <label for="signup-postal" class="form-label">Postal Code</label>
+        <input
+          id="signup-postal"
+          type="text"
+          formControlName="postalCode"
+          placeholder="Postal code"
+          autocomplete="postal-code"
+          class="form-input"
+        />
+        @if (BuyerSignUpForm.controls.postalCode.touched &&
+             BuyerSignUpForm.controls.postalCode.invalid) {
+          <small class="form-error">Postal code is required.</small>
+        }
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="signup-country" class="form-label">Country</label>
+      <input
+        id="signup-country"
+        type="text"
+        formControlName="country"
+        placeholder="Country"
+        autocomplete="country-name"
+        class="form-input"
+      />
+      @if (BuyerSignUpForm.controls.country.touched &&
+           BuyerSignUpForm.controls.country.invalid) {
+        <small class="form-error">Country is required.</small>
+      }
+    </div>
+  </section>
+  
+  <!-- API Messages -->
+  @if (errorMessage) {
+    <div
+      role="alert"
+      class="rounded-lg bg-red-50 p-3 text-sm text-red-700"
+    >
+      {{ errorMessage }}
+    </div>
+  }
+
+  @if (successMessage) {
+    <div
+      role="status"
+      class="rounded-lg bg-green-50 p-3 text-sm text-green-700"
+    >
+      {{ successMessage }}
+    </div>
+  }
+
+  <!-- Submit -->
+  <button
+    type="submit"
+    [disabled]="isLoading"
+    class="w-full rounded-lg bg-blue-600 px-4 py-3 font-semibold
+           text-white transition hover:bg-blue-700
+           disabled:cursor-not-allowed disabled:opacity-60"
+  >
+    {{ isLoading ? 'Creating account...' : 'Create Seller Account' }}
+  </button>
+
+</form>

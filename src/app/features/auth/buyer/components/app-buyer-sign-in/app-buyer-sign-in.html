@@ -1,0 +1,48 @@
+
+<form [formGroup]="BuyerSignInForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-field">
+    <label for="signin-email" >Email</label>
+
+    <input
+      id="signin-email"
+      type="email"
+      formControlName="email"
+      placeholder="Enter your email"
+    />
+
+    @if (BuyerSignInForm.controls.email.touched &&
+         BuyerSignInForm.controls.email.invalid) {
+      <small>Please enter a valid email.</small>
+    }
+  </div>
+  
+  <div class="form-field">
+    <label for="signin-password">Password</label>
+
+    <input
+      id="signin-password"
+      type="password"
+      formControlName="password"
+      placeholder="Enter your password"
+    />
+
+    @if (BuyerSignInForm.controls.password.touched &&
+         BuyerSignInForm.controls.password.invalid) {
+      <small>Password is required.</small>
+    }
+  </div>
+
+  @if (errorMessage) {
+    <p class="error">{{ errorMessage }}</p>
+  }
+
+  @if (successMessage) {
+    <p class="success">{{ successMessage }}</p>
+  }
+
+  <button type="submit" [disabled]="isLoading">
+    {{ isLoading ? 'Signing in...' : 'Sign In' }}
+  </button>
+
+</form>

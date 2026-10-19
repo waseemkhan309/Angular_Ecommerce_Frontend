@@ -1,0 +1,29 @@
+
+<div class="auth-container">
+  <div class="auth-card">
+    <h1>Welcome</h1>
+    <p>Sign in or create your account as <b>Buyer</b></p>
+
+    <div class="auth-tabs">
+      <button
+        type="button"
+        [class.active]="isBuyerSignIn"
+        (click)="showBuyerSignIn()">
+        Sign In
+      </button>
+
+      <button
+        type="button"
+        [class.active]="!isBuyerSignIn"
+        (click)="showBuyerSignUp()">
+        Sign Up
+      </button>
+    </div>
+
+    @if (isBuyerSignIn) {
+      <app-buyer-sign-in />
+    } @else {
+      <app-buyer-sign-up />
+    }
+  </div>
+</div>

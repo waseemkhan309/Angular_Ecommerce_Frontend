@@ -3,13 +3,13 @@ import { SignIn } from '../../components/sign-in/sign-in';
 import { SignUp } from '../../components/sign-up/sign-up';
 
 @Component({
-  selector: 'app-auth-page',
+  selector: 'app-auth-seller-page',
   imports: [SignIn, SignUp],
   templateUrl: './auth-page.html',
   styleUrl: './auth-page.css',
 })
 
-export class AuthPage {
+export class AuthSellerPage {
 
   isSignIn = true;
 

@@ -31,5 +31,16 @@ export class BuyerAuth {
     );
   }
 
+
+   // Check if token exists in localStorage
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
+
+  // check user role exists in localStorage 
+  LogedInUserRole(): string {
+    return localStorage.getItem('Role') ?? '';
+  }
+
 }
 

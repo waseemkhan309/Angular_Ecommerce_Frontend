@@ -44,8 +44,9 @@ export class AppBuyerSignIn {
         this.isLoading = false;
       }))
       .subscribe({
-        next:()=>{
-        console.log('Hello');
+        next:(response)=>{
+        console.log(response);
+        
         },
         error:(error)=>{
           this.errorMessage = 

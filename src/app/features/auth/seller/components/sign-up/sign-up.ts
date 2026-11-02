@@ -5,7 +5,7 @@ import {
   ReactiveFormsModule,
   Validators
 } from '@angular/forms';
-import { Auth } from '../../../../../core/services/auth';
+import { Auth } from '../../../../../core/services/seller/auth';
 import { finalize } from 'rxjs';
 
 

@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Auth } from '../../../../../core/services/auth';
+import { Auth } from '../../../../../core/services/seller/auth';
 import { finalize } from 'rxjs';
 import { AppBuyerSignIn } from '../app-buyer-sign-in/app-buyer-sign-in';
 import { BuyerAuth } from '../../../../../core/services/buyer/buyer-auth';

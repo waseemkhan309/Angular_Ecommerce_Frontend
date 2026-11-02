@@ -8,4 +8,8 @@ import { ProductPage } from '../../products/product-page/product-page';
   templateUrl: './product-layout-page.html',
   styleUrl: './product-layout-page.css',
 })
-export class ProductLayoutPage {}
+export class ProductLayoutPage {
+
+}
+
+

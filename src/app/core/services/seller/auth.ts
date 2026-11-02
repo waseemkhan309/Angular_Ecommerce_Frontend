@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AuthLoginResponse, AuthRegisterResponse, SignInRequest, SignUpRequest } from '../../features/auth/seller/models/auth.models';
-import { environment } from '../../../environments/environments';
+import { AuthLoginResponse, AuthRegisterResponse, SignInRequest, SignUpRequest } from '../../../features/auth/seller/models/auth.models';
+import { environment } from '../../../../environments/environments';
 
 
 @Injectable({

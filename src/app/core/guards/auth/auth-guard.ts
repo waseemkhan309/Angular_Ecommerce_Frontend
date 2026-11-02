@@ -1,5 +1,5 @@
 import { CanActivateFn, RedirectCommand } from '@angular/router';
-import { BuyerAuth } from '../services/buyer/buyer-auth';
+import { BuyerAuth } from '../../services/buyer/buyer-auth';
 import { Router } from '@angular/router';
 import { inject } from '@angular/core';
 

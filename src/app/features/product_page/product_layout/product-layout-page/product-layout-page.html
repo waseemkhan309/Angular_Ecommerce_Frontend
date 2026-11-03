@@ -1,9 +1,21 @@
 <div class="flex ">
     <div class="pl-2">
-        <app-product-filters></app-product-filters>
+        <app-product-filters
+        (onSelectFilters) = "onFilterChange($event)"
+        ></app-product-filters>
     </div>
+
     <div class="border-l-2">
-        <app-product-page></app-product-page>
+        <app-product-page
+        [products]="products()"
+        [errorMessage]="errorMessage()"
+        [isLoading]="isLoading()"
+        [hasMore]="hasMore"
+        [nextCreatedAt]="nextCreatedAt"
+        [nextId]="nextId"
+        (loadMoreProducts) = "fetchProducts()"
+        >
+        </app-product-page>
     </div>
 </div>
 
